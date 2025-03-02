@@ -1,15 +1,26 @@
 import React from "react";
-import EditTodo from "./EditTodo";
-import DeletTodo from "./DeletTodo";
+import EditToDoIcon from "./EditToDoIcon";
+import DeletToDoIcon from "./DeletToDoIcon";
 
-const TodoItem = () => {
+const TodoItem = ({ todo, statusHandler, removeTodoHandler }) => {
   return (
     <div>
       <li className="relative flex items-center justify-between px-2 py-6 border-b">
         <div>
-          <input type="checkbox" className="" />
-          <p className="inline-block mt-1 ml-2 text-gray-600">
-            Eating breakfast at 7:00{" "}
+          <input
+            type="checkbox"
+            className=""
+            checked={todo.status}
+            onChange={() => {
+              statusHandler(todo.id);
+            }}
+          />
+          <p
+            className={`inline-block mt-1 ml-2 text-gray-600 ${
+              todo.status ? "line-through" : " "
+            }`}
+          >
+            {todo.title}
           </p>
         </div>
 
@@ -17,8 +28,8 @@ const TodoItem = () => {
           type="button"
           className="absolute right-0 flex items-center space-x-1"
         >
-          <DeletTodo />
-          <EditTodo />
+          <DeletToDoIcon removeTodoHandler={removeTodoHandler} todo={todo} />
+          <EditToDoIcon />
         </button>
       </li>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const EditTodo = () => {
+const EditToDoIcon = () => {
   return (
     <div>
       <svg
@@ -21,4 +21,4 @@ const EditTodo = () => {
   );
 };
 
-export default EditTodo;
+export default EditToDoIcon;

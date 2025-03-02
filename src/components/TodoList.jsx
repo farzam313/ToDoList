@@ -1,12 +1,19 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-const TodoList = () => {
+const TodoList = ({ todo, statusHandler, removeTodoHandler }) => {
   return (
     <div>
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
+      <ul>
+        {todo.map((todo, index) => (
+          <TodoItem
+            key={index}
+            todo={todo}
+            statusHandler={statusHandler}
+            removeTodoHandler={removeTodoHandler}
+          />
+        ))}
+      </ul>
     </div>
   );
 };

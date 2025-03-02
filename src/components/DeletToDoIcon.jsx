@@ -1,9 +1,12 @@
 import React from "react";
 
-const DeletTodo = () => {
+const DeletToDoIcon = ({ todo, removeTodoHandler }) => {
   return (
     <div>
       <svg
+        onClick={() => {
+          removeTodoHandler(todo.id);
+        }}
         xmlns="http://www.w3.org/2000/svg"
         className="w-5 h-5 text-red-700"
         fill="none"
@@ -21,4 +24,4 @@ const DeletTodo = () => {
   );
 };
 
-export default DeletTodo;
+export default DeletToDoIcon;
