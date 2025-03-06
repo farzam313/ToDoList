@@ -1,10 +1,12 @@
-import "./App.css";
 import Todo from "./components/Todo";
+import { AppDataProvider } from "./components/NewContext";
 
 function App() {
   return (
     <>
-      <Todo />
+      <AppDataProvider>
+        <Todo />
+      </AppDataProvider>
     </>
   );
 }

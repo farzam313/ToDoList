@@ -1,6 +1,6 @@
 import React from "react";
 
-const EditToDoIcon = () => {
+const EditToDoIcon = ({ setEditMode }) => {
   return (
     <div>
       <svg
@@ -10,6 +10,9 @@ const EditToDoIcon = () => {
         viewBox="0 0 24 24"
         stroke="currentColor"
         strokeWidth="2"
+        onClick={() => {
+          setEditMode(true);
+        }}
       >
         <path
           strokeLinecap="round"

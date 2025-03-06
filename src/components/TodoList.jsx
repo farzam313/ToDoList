@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import TodoItem from "./TodoItem";
+import { NewContext } from "./NewContext";
 
-const TodoList = ({ todo, statusHandler, removeTodoHandler }) => {
+const TodoList = () => {
+  let { todo } = useContext(NewContext);
   return (
     <div>
       <ul>
-        {todo.map((todo, index) => (
-          <TodoItem
-            key={index}
-            todo={todo}
-            statusHandler={statusHandler}
-            removeTodoHandler={removeTodoHandler}
-          />
+        {todo.map((item, index) => (
+          <TodoItem key={index} todo={item} />
         ))}
       </ul>
     </div>
